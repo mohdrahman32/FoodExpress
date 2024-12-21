@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts - FoodieExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        :root {
+            --primary: #e5526f; /* Bright red-pink */
+            --secondary: #ec6547; /* Coral */
+            --background: #faa378; /* Peach */
+            --light: #f4d650; /* Golden yellow */
+            --accent: #acddbf; /* Mint green */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--primary);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .category-card {
+            background-color: var(--secondary);
+            border-radius: 8px;
+            transition: transform 0.2s;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-card img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-section {
+            background-color: var(--secondary);
+            color:#f5d33b;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .quote-section {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 40px 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .restaurant-card {
+            background-color: var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .restaurant-card img {
+            width: 100%;
+            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .restaurant-card h4 {
+            font-size: 1.2rem;
+            margin-top: 16px;
+        }
+
+        .restaurant-card p {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-primary text-light py-4" data-aos="fade-down" data-aos-duration="1000">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">FoodieExpress</h1>
+            <nav class="space-x-6">
+                <a href="home.html" class="hover:underline">Home</a>
+                <a href="categories.html" class="hover:underline">Categories</a>
+                <a href="about.html" class="hover:underline">About</a>
+                <a href="contact.html" class="hover:underline">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" data-aos="fade-up" data-aos-duration="1500">
+        <h2 class="text-4xl font-bold mb-6">Desserts: Sweet Indulgence</h2>
+        <p class="text-xl mb-8">From decadent chocolates to refreshing fruit tarts, desserts are the perfect way to end a meal. Dive into the world of sugary delights!</p>
+        <img src="images/dessert.avif" alt="Dessert" class="rounded-lg mb-4 mx-auto max-w-lg">
+        <a href="#restaurants" class="btn">
+            <i class="fas fa-utensils"></i> Explore Best Dessert Spots
+        </a>
+    </section>
+
+    <!-- Dessert Introduction Section -->
+    <section id="introduction" class="py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-primary mb-8">Why Desserts Make Life Sweeter</h3>
+            <p class="text-lg text-center mb-8">Desserts bring joy to people worldwide, offering an endless variety of flavors and textures. From traditional recipes to modern gourmet creations, there's always something to savor!</p>
+        </div>
+    </section>
+
+    <!-- Best Restaurants for Desserts -->
+    <section id="restaurants" class="py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-primary mb-8">Best Restaurants for Desserts</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Conçu -->
+                <div class="restaurant-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/concu.jpg" alt="Conçu">
+                    <h4 class="text-xl font-bold">Conçu</h4>
+                    <p>Known for artisanal cakes and pastries made with love and precision.</p>
+                    <a href="https://www.concu.in/" class="btn" target="_blank">Book Now</a>
+                </div>
+                <!-- Gourmet Baklava -->
+                <div class="restaurant-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/Gourmetbaklava.jpg" alt="Gourmet Baklava">
+                    <h4 class="text-xl font-bold">Gourmet Baklava</h4>
+                    <p>Offers authentic Turkish baklava with rich, buttery layers.</p>
+                    <a href="https://gourmetbaklava.in/" class="btn" target="_blank">Book Now</a>
+                </div>
+                <!-- Labonel Fine Baking -->
+                <div class="restaurant-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/LabonelFineBaking.jpg" alt="Labonel Fine Baking">
+                    <h4 class="text-xl font-bold">Labonel Fine Baking</h4>
+                    <p>Specializes in premium desserts and confections for every occasion.</p>
+                    <a href="https://www.labonelfinebaking.shop/" class="btn" target="_blank">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sushi Quote Section -->
+    <section id="quote" class="quote-section" data-aos="fade-up" data-aos-duration="1500">
+        <h3 class="text-3xl italic font-bold mb-4">
+            <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>“Desserts are the fairy tales of the kitchen—a happily-ever-after to supper.”</p>
+                </blockquote>
+            </div>
+            </div>
+        </h3>
+        <p class="text-xl italic">- Terri Guillemets</p>
+    </section>
+
+    <!-- Fun Sushi Facts Section -->
+    <section id="fun-facts" class="py-16" data-aos="fade-up" data-aos-duration="1000" style="background-color: #d2ffce;">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-accent mb-8">Fun Facts About Desserts</h3>
+            <ul class="list-disc list-inside text-lg space-y-4">
+                <li>Cheesecake dates back to ancient Greece and was even served to athletes during the first Olympic Games in 776 B.C.</li>
+                <li>In 1897, dentist William Morrison co-created this sugary treat, originally called "Fairy Floss."</li>
+                <li>The banana split was invented in 1904 by a 23-year-old pharmacist experimenting with dessert recipes.</li>
+                <li>The first gummy bear, "Gummibärchen," was created in 1922 by German confectioner Hans Riegel.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-light py-4 text-center" data-aos="fade-up" data-aos-duration="1000" style="background-color: #f4d650;">
+        <p>&copy; 2024 FoodieExpress. All rights reserved.</p>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 1200 });
+        gsap.from(".hero-section h2", { opacity: 0, y: -50, duration: 1 });
+        gsap.from(".hero-section p", { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+        gsap.from(".restaurant-card", {
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            duration: 1,
+            delay: 1,
+            ease: "power4.out",
+        });
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>

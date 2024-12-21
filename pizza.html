@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza - FoodieExpress</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        :root {
+            --primary: #243010; /* Deep greenish-brown */
+            --secondary: #87A330; /* Muted olive green */
+            --background: #A1C349; /* Soft, fresh green */
+            --light: #CAD593; /* Lighter cream-like color */
+            --accent: #2A3C24; /* Dark olive green */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: #f1ffad;
+        }
+
+        .btn {
+            background-color: #87A330;
+            color: #f1ffad;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .category-card {
+            background-color: var(--secondary);
+            border-radius: 8px;
+            transition: transform 0.2s;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-card img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-section {
+            background-color: var(--secondary);
+            color: var(--light);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .quote-section {
+            background-color: var(--primary);
+            color: #f1ffad;
+            padding: 40px 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .restaurant-card {
+            background-color: var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .restaurant-card img {
+            width: 100%;
+            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .restaurant-card h4 {
+            font-size: 1.2rem;
+            margin-top: 16px;
+        }
+
+        .restaurant-card p {
+            font-size: 1rem;
+            color: var(--light);
+            margin-top: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-primary text-light py-4" data-aos="fade-down" data-aos-duration="1000" style="background-color: #243010;">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">FoodieExpress</h1>
+            <nav class="space-x-6">
+                <a href="home.html" class="hover:underline">Home</a>
+                <a href="categories.html" class="hover:underline">Categories</a>
+                <a href="about.html" class="hover:underline">About</a>
+                <a href="contact.html" class="hover:underline">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Pizza) -->
+    <section class="hero-section" data-aos="fade-up" data-aos-duration="1500">
+        <h2 class="text-4xl font-bold mb-6">Pizza: A Slice of Heaven</h2>
+        <p class="text-xl mb-8">Whether it's the crispy crust or the melty cheese, pizza has been a beloved dish worldwide for generations. Let's dive into the world of pizza and discover the best places to enjoy a delicious slice!</p>
+        <img src="images/pizza.avif" alt="Pizza" class="rounded-lg mb-4 mx-auto max-w-lg">
+        <a href="#restaurants" class="btn" style="background-color: #2A3C24;">
+            <i class="fas fa-utensils"></i> Explore Best Restaurants
+        </a>
+    </section>
+
+    <!-- Pizza Introduction Section -->
+    <section id="introduction" class="py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-accent mb-8">Why Pizza is a Timeless Classic</h3>
+            <p class="text-lg text-center mb-8">Pizza is more than just a meal – it's a global symbol of comfort, indulgence, and joy. Originating from Italy, this dish has evolved into countless varieties, all catering to different tastes. From the simple Margherita to the hearty deep-dish pizza, there’s a slice for everyone.</p>
+        </div>
+    </section>
+
+    <!-- Best Restaurants to Book Pizza -->
+    <section id="restaurants" class="py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-accent mb-8">Best Restaurants to Enjoy Pizza</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Domino's -->
+                <div class="restaurant-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/dominos.jpg" alt="Domino's Pizza">
+                    <h4 class="text-xl font-bold">Domino's</h4>
+                    <p>Famous for its hot and fresh pizzas delivered right to your doorstep.</p>
+                    <a href="https://www.dominos.com" class="btn" target="_blank">Book Now</a>
+                </div>
+                <!-- Pizza Hut -->
+                <div class="restaurant-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/pizzahut.jpg" alt="Pizza Hut">
+                    <h4 class="text-xl font-bold">Pizza Hut</h4>
+                    <p>Serving delicious pizzas with endless customization options.</p>
+                    <a href="https://www.pizzahut.com" class="btn" target="_blank">Book Now</a>
+                </div>
+                <!-- La Pino'z Pizza -->
+                <div class="restaurant-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/lapinoz.png" alt="La Pino'z Pizza">
+                    <h4 class="text-xl font-bold">La Pino'z Pizza</h4>
+                    <p>Known for its unique crusts and a wide range of mouthwatering pizzas.</p>
+                    <a href="https://lapinozpizza.in/" class="btn" target="_blank">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza Quote Section -->
+    <section id="quote" class="quote-section" data-aos="fade-up" data-aos-duration="1500">
+        <h3 class="text-3xl italic font-bold mb-4">
+            <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>"There’s no better feeling in the world than a warm pizza box on your lap."</p>
+                </blockquote>
+            </div>
+            </div>
+        </h3>
+        <p class="text-xl italic">- Kevin James</p>
+    </section>
+
+    <!-- Fun Pizza Facts Section -->
+    <section id="fun-facts" class="py-16" data-aos="fade-up" data-aos-duration="1000" style="background-color: #87A330;">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-accent mb-8">Fun Facts About Pizza</h3>
+            <ul class="list-disc list-inside text-lg space-y-4">
+                <li>Pizza is the most popular takeaway food worldwide.</li>
+                <li>The world’s largest pizza was created in Italy and was named “Ottavia.”</li>
+                <li>Each person in the U.S. eats an average of 46 pizza slices annually!</li>
+                <li>In 2017, the first-ever pizza-making robot was introduced in California.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-accent text-light py-4 text-center" data-aos="fade-up" data-aos-duration="1000" style="background-color: #243010;">
+        <p>&copy; 2024 FoodieExpress. All rights reserved.</p>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1200,  // Smooth transition for AOS elements
+        });
+
+        // GSAP animations to make the page more dynamic
+        gsap.from(".hero-section h2", { opacity: 0, y: -50, duration: 1 });
+        gsap.from(".hero-section p", { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+        gsap.from(".restaurant-card", {
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            duration: 1,
+            delay: 1,
+            ease: "power4.out",
+        });
+    </script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>
